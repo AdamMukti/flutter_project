@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_project/src/models/MahasiswaModel.dart';
 import 'package:flutter_project/src/utility/theme_color.dart';
 import 'package:flutter_project/src/utility/theme_text.dart';
 import 'package:flutter_project/src/views/detailMahasiswa.dart';
@@ -21,11 +20,10 @@ class _ListMahasiswaState extends State<ListMahasiswa> {
   List _mahasiswaList = [];
 
   Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('api/GetAllMahasiswa.json');
+    final String response = await rootBundle.loadString('api/mahasiswa.json');
     final data = await json.decode(response);
     setState(() {
-      _mahasiswa = data['data']['mahasiswa'];
+      _mahasiswa = data;
       _mahasiswaList = _mahasiswa;
     });
   }
@@ -102,7 +100,7 @@ class _ListMahasiswaState extends State<ListMahasiswa> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: 24,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -136,20 +134,8 @@ class _ListMahasiswaState extends State<ListMahasiswa> {
                           style: textHeading.copyWith(fontSize: 18),
                         ),
                         subtitle: Text(
-                          _mahasiswaList[index]["nim"],
+                          _mahasiswaList[index]["npm"].toString(),
                           style: textMuted,
-                        ),
-                        trailing: Container(
-                          alignment: Alignment.center,
-                          height: 36,
-                          width: 36,
-                          decoration: BoxDecoration(
-                            color: primary,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                              _mahasiswaList[index]['statusMahasiswa']['id'],
-                              style: textStatus),
                         ),
                       );
                     }),

@@ -29,7 +29,7 @@ class DetailMahasiswa extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 36, bottom: 8),
                 child: Text(
-                  'Biodata',
+                  'Proposal Skripsi',
                   style: textHeading,
                 ),
               ),
@@ -39,44 +39,16 @@ class DetailMahasiswa extends StatelessWidget {
               ),
               DetailInfoWidget(
                 title: 'NPM',
-                value: data['nim'],
+                value: data['npm'].toString(),
               ),
               DetailInfoWidget(
-                title: 'Nomor HP',
-                value: data['noHp'],
+                title: 'Dosen Pembimbing',
+                value: data['pembimbing_proposal'],
               ),
               DetailInfoWidget(
-                title: 'Email',
-                value: data['user']['email'],
+                title: 'Judul Proposal',
+                value: data['judul_proposal'],
               ),
-              DetailInfoWidget(
-                title: 'Program Studi',
-                value: data['programStudi']['name'],
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Status Mahasiswa',
-                      style: textMuted.copyWith(fontWeight: FontWeight.w500),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: 36,
-                      width: 36,
-                      margin: EdgeInsets.only(top: 8),
-                      decoration: BoxDecoration(
-                        color: primary,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(data['statusMahasiswa']['id'],
-                          style: textStatus),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),
@@ -104,7 +76,7 @@ class DetailInfoWidget extends StatelessWidget {
           ),
           Text(
             value == '' ? '-' : value,
-            style: textTitle,
+            style: textTitle.copyWith(height: 1.5),
           )
         ],
       ),
