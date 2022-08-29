@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'SISTEM INFORMASI\nMANAJEMEN\nTUGAS AKHIR',
+                'SISTEM\nINFORMASI\nTUGAS AKHIR',
                 style: textHeading,
               ),
             ),
@@ -86,7 +86,7 @@ class HomePage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
-                            '1234',
+                            '215',
                             style: textHeading.copyWith(
                               color: Colors.white,
                               fontSize: 48,
