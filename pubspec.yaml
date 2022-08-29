@@ -59,8 +59,6 @@ flutter:
   assets:
     - assets/image/
     - assets/icon/
-    # - api/mahasiswa.json
-    - api/GetAllMahasiswa.json
     - api/mahasiswa.json
 
   # An image asset can refer to one or more resolution-specific "variants", see

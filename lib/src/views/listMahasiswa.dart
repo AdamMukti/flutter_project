@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_project/src/utility/theme_color.dart';
@@ -21,9 +20,8 @@ class _ListMahasiswaState extends State<ListMahasiswa> {
 
   Future<void> readJson() async {
     final String response = await rootBundle.loadString('api/mahasiswa.json');
-    final data = await json.decode(response);
+    final _mahasiswa = await json.decode(response);
     setState(() {
-      _mahasiswa = data;
       _mahasiswaList = _mahasiswa;
     });
   }

@@ -1,5 +1,4 @@
 import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_project/src/utility/theme_color.dart';
 import 'package:flutter_project/src/utility/theme_text.dart';
